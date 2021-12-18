@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Connector\\Kafka.Connector.csproj": {}
+    "C:\\Projetos\\kafka-net-core\\Kafka.Connector\\Kafka.Connector.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Connector\\Kafka.Connector.csproj": {
+    "C:\\Projetos\\kafka-net-core\\Kafka.Connector\\Kafka.Connector.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Connector\\Kafka.Connector.csproj",
+        "projectUniqueName": "C:\\Projetos\\kafka-net-core\\Kafka.Connector\\Kafka.Connector.csproj",
         "projectName": "Kafka.Connector",
-        "projectPath": "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Connector\\Kafka.Connector.csproj",
+        "projectPath": "C:\\Projetos\\kafka-net-core\\Kafka.Connector\\Kafka.Connector.csproj",
         "packagesPath": "C:\\Users\\Josue\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Connector\\obj\\",
+        "outputPath": "C:\\Projetos\\kafka-net-core\\Kafka.Connector\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Josue\\AppData\\Roaming\\NuGet\\NuGet.Config",

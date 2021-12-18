@@ -509,11 +509,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Service\\Kafka.Service.csproj",
+      "projectUniqueName": "C:\\Projetos\\kafka-net-core\\Kafka.Service\\Kafka.Service.csproj",
       "projectName": "Kafka.Service",
-      "projectPath": "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Service\\Kafka.Service.csproj",
+      "projectPath": "C:\\Projetos\\kafka-net-core\\Kafka.Service\\Kafka.Service.csproj",
       "packagesPath": "C:\\Users\\Josue\\.nuget\\packages\\",
-      "outputPath": "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Service\\obj\\",
+      "outputPath": "C:\\Projetos\\kafka-net-core\\Kafka.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Josue\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -530,8 +530,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Connector\\Kafka.Connector.csproj": {
-              "projectPath": "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Connector\\Kafka.Connector.csproj"
+            "C:\\Projetos\\kafka-net-core\\Kafka.Connector\\Kafka.Connector.csproj": {
+              "projectPath": "C:\\Projetos\\kafka-net-core\\Kafka.Connector\\Kafka.Connector.csproj"
             }
           }
         }

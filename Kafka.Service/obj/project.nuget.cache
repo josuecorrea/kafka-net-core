@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PMEvYwXtOC5A/yEQ6BV71MTJJKP/Xj4HrDGZGqzzQNBRalDvo1t8fLq2kbxHkup9LH/4Wh1toIqsrLd9pxTefQ==",
+  "dgSpecHash": "ylqZUd4hrMYzJ6uWc0KT7oCpPwBJZAIoUXLKY5PQSo9kjkfmuitnzwzL4y9Cl3mjX/zKGkNw45hcYboR+emXPA==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\Kafka\\KafkaProducerConsumer\\Kafka.Service\\Kafka.Service.csproj",
+  "projectFilePath": "C:\\Projetos\\kafka-net-core\\Kafka.Service\\Kafka.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Josue\\.nuget\\packages\\confluent.kafka\\1.8.2\\confluent.kafka.1.8.2.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\librdkafka.redist\\1.8.2\\librdkafka.redist.1.8.2.nupkg.sha512",
