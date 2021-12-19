@@ -38,7 +38,7 @@ namespace Kafka.Service.Implements
                     {
                         await callback.Message(message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic, message.TopicPartition.Topic);
 
-                        if (!true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
+                        if (true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
                         {
                             consumer.Commit(message);
                         }
@@ -51,7 +51,7 @@ namespace Kafka.Service.Implements
             }
         }
 
-        public async Task ConsumePartitionOffSet(string topic, string groupId, int partition, long offset, ICallbackService callback, CancellationToken cancellationToken)
+        public async Task AssignNewPartitionOffSet(string topic, string groupId, int partition, long offset, ICallbackService callback, CancellationToken cancellationToken)
         {
             var instanceConnetor = await _serverConnectorFactory.CreateConsumerInstanceConnetor();
             instanceConnetor.GroupId = groupId;
@@ -74,7 +74,7 @@ namespace Kafka.Service.Implements
                     {
                         await callback.Message(message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic, message.TopicPartition.Topic);
 
-                        if (!true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
+                        if (true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
                         {
                             consumer.Commit(message);                           
                         }
@@ -131,10 +131,9 @@ namespace Kafka.Service.Implements
             }
         }
 
-        public async Task<IEnumerable<TopicPartitionOffset>> GetCurrentCommitedOffSetFromTopic(string topic, string groupId, int partition)
+        public async Task<IEnumerable<TopicPartitionOffset>> GetCurrentCommitedOffSetFromTopic(string topic, int partition)
         {
             var instanceConnetor = await _serverConnectorFactory.CreateConsumerInstanceConnetor();
-            instanceConnetor.GroupId = groupId;
 
             using var consumer = new ConsumerBuilder<Ignore, string>(instanceConnetor).Build();
 
@@ -153,10 +152,9 @@ namespace Kafka.Service.Implements
         }
 
 
-        public async Task<Offset> GetCurrentOffSetPositionFromTopic(string topic, string groupId, int partition)
+        public async Task<Offset> GetCurrentOffSetPositionFromTopic(string topic, int partition)
         {
             var instanceConnetor = await _serverConnectorFactory.CreateConsumerInstanceConnetor();
-            instanceConnetor.GroupId = groupId;
 
             using var consumer = new ConsumerBuilder<Ignore, string>(instanceConnetor).Build();
 

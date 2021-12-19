@@ -45,6 +45,7 @@ namespace Kafka.Connector.Implements
                 config.SaslUsername = "ickafka";
                 config.SaslPassword = "yourpassword";
                 config.Acks = Acks.Leader; //TODO: COLOCAR COMO  FEATURE FLAG
+                
             });
             
             return config;
@@ -63,6 +64,7 @@ namespace Kafka.Connector.Implements
                 config.SaslPassword = "yourpassword";
                 config.AutoOffsetReset = AutoOffsetReset.Earliest;
                 config.Acks = Acks.Leader; //TODO: COLOCAR COMO  FEATURE FLAG
+                
 
             });
 

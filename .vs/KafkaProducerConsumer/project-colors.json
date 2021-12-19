@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bdf3c2af-c69e-4b0e-a573-47cc2e58bde9": {
+      "ProjectGuid": "bdf3c2af-c69e-4b0e-a573-47cc2e58bde9",
+      "DisplayName": "Kafka.Service",
+      "ColorIndex": 0
+    },
+    "4727c8a0-5e5f-466d-bc41-ae5619b963a6": {
+      "ProjectGuid": "4727c8a0-5e5f-466d-bc41-ae5619b963a6",
+      "DisplayName": "Kafka.Connector",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}
