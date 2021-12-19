@@ -2,29 +2,29 @@
 using Kafka.Connector.Contracts;
 using Kafka.Service.Contracts;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Kafka.Service.Implements
 {
-    public class ProducerService : IProducerService
+    public class ProducerService : IProducerService, IDisposable
     {
-        private readonly IServerConnector _serverConnector;
+        private readonly IServerConnector _serverConnectorFactory;
+        IProducer<Null, string> _producer;
 
-        public ProducerService(IServerConnector serverConnector)
+        public ProducerService(IServerConnector serverConnectorFactory)
         {
-            _serverConnector = serverConnector;
+            _serverConnectorFactory = serverConnectorFactory;
+
+            _producer = new ProducerBuilder<Null, string>(_serverConnectorFactory.CreateProducerInstanceConnetor().GetAwaiter().GetResult()).Build();
         }
 
         public async Task<DeliveryResult<Null, string>> MessagePublish(string topic, string message)
         {
-            using var producer = new ProducerBuilder<Null, string>(await _serverConnector.CreateProducerInstanceConnetor()).Build();
+            //using var producer = new ProducerBuilder<Null, string>(await _serverConnectorFactory.CreateProducerInstanceConnetor()).Build();
 
             try
             {
-                var sendResult = await producer.ProduceAsync(topic, new Message<Null, string> { Value = message },);
+                var sendResult = await _producer.ProduceAsync(topic, new Message<Null, string> { Value = message });
 
                 return sendResult;
             }
@@ -32,6 +32,12 @@ namespace Kafka.Service.Implements
             {
                 throw e;
             }
+        }
+
+        public void Dispose()
+        {
+            _producer.Flush();
+            _producer.Dispose();
         }
     }
 }

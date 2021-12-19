@@ -1,9 +1,5 @@
 ﻿using Confluent.Kafka;
 using Kafka.Connector.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Kafka.Connector.Contracts
@@ -12,7 +8,7 @@ namespace Kafka.Connector.Contracts
     {
         Task GetProperties();
 
-        Task SetCustomConfig(ConfigProperties configProperties);
+        Task SetCustomConfig(Models.Configuration configProperties);
 
         Task<ProducerConfig> CreateProducerConfig();
 
