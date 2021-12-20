@@ -1,5 +1,6 @@
 ﻿using Confluent.Kafka;
 using Kafka.Connector.Contracts;
+using Kafka.Connector.Models;
 using Kafka.Service.Contracts;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace Kafka.Service.Implements
                     
                     if (message != null)
                     {
-                        await callback.Message(message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic, message.TopicPartition.Topic);
+                        await callback.Message(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
 
                         if (true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
                         {
@@ -44,6 +45,44 @@ namespace Kafka.Service.Implements
                         }
                     }                   
                 }
+            }
+            catch (OperationCanceledException)
+            {
+                consumer.Close();
+            }
+        }
+
+        public async Task Consume(string topic, string groupId, ICallbackService callback, long quantity, CancellationToken cancellationToken)
+        {
+            var instanceConnetor = await _serverConnectorFactory.CreateConsumerInstanceConnetor();
+            instanceConnetor.GroupId = groupId;
+
+            using var consumer = new ConsumerBuilder<Ignore, string>(instanceConnetor).Build();
+
+            consumer.Subscribe(topic);
+
+            var cts = new CancellationTokenSource();
+
+            var messages =  new List<Message>();
+
+            try
+            {
+                for (int i = 0; i <= quantity; i++)
+                {
+                    var message = consumer.Consume(cts.Token);
+
+                    if (message != null)
+                    {
+                         messages.Add(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
+
+                        if (true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
+                        {
+                            consumer.Commit(message);
+                        }
+                    }
+                }  
+                
+                await callback.Message(messages);
             }
             catch (OperationCanceledException)
             {
@@ -72,7 +111,7 @@ namespace Kafka.Service.Implements
 
                     if (message != null)
                     {
-                        await callback.Message(message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic, message.TopicPartition.Topic);
+                        await callback.Message(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
 
                         if (true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
                         {
@@ -115,7 +154,7 @@ namespace Kafka.Service.Implements
 
                     if (message != null)
                     {
-                        await callback.Message(message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic, message.TopicPartition.Topic);
+                        await callback.Message(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
 
                         if (!true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
                         {

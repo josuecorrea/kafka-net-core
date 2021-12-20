@@ -1,9 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿
+using Kafka.Connector.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Kafka.Service.Contracts
 {
     public interface  ICallbackService
     {
-        Task<string> Message (string value, long? offset, int? partition, string topic, string topicPartion);
+        Task Message (Message message);
+        Task Message (IEnumerable<Message> messages);
     }
 }
