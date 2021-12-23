@@ -6,12 +6,13 @@ using Kafka.Service.Implements;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Threading.Tasks;
 
 namespace KafkaProducer.Example
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //setup our DI
             var serviceProvider = new ServiceCollection()
@@ -27,10 +28,10 @@ namespace KafkaProducer.Example
             const string topic = "meutopico";
 
             //do the actual work here
-            var bar = serviceProvider.GetService<IProducerService>();
+            var producer = serviceProvider.GetService<IProducerService>();
             while (true) 
-            { 
-               var result =  bar.MessagePublish(topic, Guid.NewGuid().ToString()).GetAwaiter().GetResult();
+            {
+                var result = await producer.MessagePublish(topic, Guid.NewGuid().ToString());//.GetAwaiter().GetResult();
 
                 Console.WriteLine($"Result: {Newtonsoft.Json.JsonConvert.SerializeObject(result)}");
             }

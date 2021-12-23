@@ -5,12 +5,13 @@ using Kafka.Service.Implements;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace KafkaConsumer.Example
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //setup our DI
             var serviceProvider = new ServiceCollection()
@@ -35,7 +36,7 @@ namespace KafkaConsumer.Example
 
             //for (int i = 0; i < 1000; i++)
             //{
-             consumer.Consume(topic, "consumidor", callBack, cts).GetAwaiter().GetResult();
+            await consumer.Consume(topic, "consumidor", callBack, cts);//.GetAwaiter().GetResult();
 
             //Console.WriteLine($"Result: {Newtonsoft.Json.JsonConvert.SerializeObject(result)}");
             //}
