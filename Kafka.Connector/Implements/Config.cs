@@ -9,18 +9,18 @@ namespace Kafka.Connector.Implements
 {
     public class Config : IConfig
     {
-        private readonly IConfiguration _configuration;
+        //private readonly IConfiguration _configuration;
 
-        public Config(IConfiguration configuration)
-        {
-            _configuration = configuration;
+        //public Config(IConfiguration configuration)
+        //{
+        //    _configuration = configuration;
 
-            var builder = new ConfigurationBuilder()
-            .SetBasePath(@"C:\config\")//TODO: COLOCAR VARIAÇÃO PARA LINUX
-            .AddJsonFile("kafka-config.json", optional: true, reloadOnChange: true);
+        //    var builder = new ConfigurationBuilder()
+        //    .SetBasePath(@"C:\config\")//TODO: COLOCAR VARIAÇÃO PARA LINUX
+        //    .AddJsonFile("kafka-config.json", optional: true, reloadOnChange: true);
 
-            _configuration = builder.Build();
-        }
+        //    _configuration = builder.Build();
+        //}
 
         public Task GetProperties()
         {
@@ -38,13 +38,13 @@ namespace Kafka.Connector.Implements
 
             await Task.Run(() =>
             {
-                config.BootstrapServers = "<your-IP-port-pairs>";
-                config.SslCaLocation = "/Path-to/cluster-ca-certificate.pem";
-                config.SecurityProtocol = SecurityProtocol.SaslSsl;
-                config.SaslMechanism = SaslMechanism.ScramSha256;
-                config.SaslUsername = "ickafka";
-                config.SaslPassword = "yourpassword";
-                config.Acks = Acks.Leader; //TODO: COLOCAR COMO  FEATURE FLAG
+                config.BootstrapServers = "localhost:9092";
+                //config.SslCaLocation = "/Path-to/cluster-ca-certificate.pem";
+                //config.SecurityProtocol = SecurityProtocol.SaslSsl;
+                //config.SaslMechanism = SaslMechanism.ScramSha256;
+                //config.SaslUsername = "ickafka";
+                //config.SaslPassword = "yourpassword";
+                //config.Acks = Acks.Leader; //TODO: COLOCAR COMO  FEATURE FLAG
                 
             });
             
@@ -57,13 +57,13 @@ namespace Kafka.Connector.Implements
 
             await Task.Run(() =>
             {
-                config.BootstrapServers = "<your-IP-port-pairs>";
-                config.SecurityProtocol = SecurityProtocol.SaslPlaintext;
-                config.SaslMechanism = SaslMechanism.ScramSha256;
-                config.SaslUsername = "ickafka";
-                config.SaslPassword = "yourpassword";
-                config.AutoOffsetReset = AutoOffsetReset.Earliest;
-                config.Acks = Acks.Leader; //TODO: COLOCAR COMO  FEATURE FLAG
+                config.BootstrapServers = "localhost:9092";
+                //config.SecurityProtocol = SecurityProtocol.SaslPlaintext;
+                //config.SaslMechanism = SaslMechanism.ScramSha256;
+                //config.SaslUsername = "ickafka";
+                //config.SaslPassword = "yourpassword";
+                //config.AutoOffsetReset = AutoOffsetReset.Earliest;
+                //config.Acks = Acks.Leader; //TODO: COLOCAR COMO  FEATURE FLAG
                 
 
             });

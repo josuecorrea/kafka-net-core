@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kafka.Service.Contracts
 {
-    internal interface IGenericProducerService<TKey, TValue>
+    public interface IGenericProducerService<TKey, TValue>
     {
         Task ProduceAsync(string topic, TKey key, TValue value);
     }

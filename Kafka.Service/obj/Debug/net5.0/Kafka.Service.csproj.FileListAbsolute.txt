@@ -1,0 +1,15 @@
+C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Service.deps.json
+C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Service.dll
+C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\ref\Kafka.Service.dll
+C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Service.pdb
+C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Connector.dll
+C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Connector.pdb
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.csproj.AssemblyReference.cache
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.AssemblyInfoInputs.cache
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.AssemblyInfo.cs
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.csproj.CoreCompileInputs.cache
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.csproj.CopyComplete
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.dll
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\ref\Kafka.Service.dll
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.pdb

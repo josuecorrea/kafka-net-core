@@ -24,7 +24,7 @@ namespace Kafka.Service.Implements
             instanceConnetor.GroupId = groupId;
 
             using var consumer = new ConsumerBuilder<Ignore, string>(instanceConnetor).Build();
-            
+
             consumer.Subscribe(topic);
 
             var cts = new CancellationTokenSource();
@@ -33,8 +33,8 @@ namespace Kafka.Service.Implements
             {
                 while (!cancellationToken.IsCancellationRequested)
                 {
-                    var message = consumer.Consume(cts.Token);
-                    
+                    var message = consumer.Consume(5000);
+
                     if (message != null)
                     {
                         await callback.Message(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
@@ -43,10 +43,10 @@ namespace Kafka.Service.Implements
                         {
                             consumer.Commit(message);
                         }
-                    }                   
+                    }
                 }
             }
-            catch (OperationCanceledException)
+            catch (OperationCanceledException ex)
             {
                 consumer.Close();
             }

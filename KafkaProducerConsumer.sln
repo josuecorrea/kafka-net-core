@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka.Connector", "Kafka.Connector\Kafka.Connector.csproj", "{4727C8A0-5E5F-466D-BC41-AE5619B963A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kafka.Connector", "Kafka.Connector\Kafka.Connector.csproj", "{4727C8A0-5E5F-466D-BC41-AE5619B963A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kafka.Service", "Kafka.Service\Kafka.Service.csproj", "{BDF3C2AF-C69E-4B0E-A573-47CC2E58BDE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kafka.Service", "Kafka.Service\Kafka.Service.csproj", "{BDF3C2AF-C69E-4B0E-A573-47CC2E58BDE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaProducer.Example", "KafkaProducer.Example\KafkaProducer.Example.csproj", "{018C5F6C-E0A0-4D93-B3CF-21A7CFEA6AE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumer.Example", "KafkaConsumer.Example\KafkaConsumer.Example.csproj", "{2C2A7894-F10F-4EFD-915F-825639B82CF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{BDF3C2AF-C69E-4B0E-A573-47CC2E58BDE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDF3C2AF-C69E-4B0E-A573-47CC2E58BDE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDF3C2AF-C69E-4B0E-A573-47CC2E58BDE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{018C5F6C-E0A0-4D93-B3CF-21A7CFEA6AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018C5F6C-E0A0-4D93-B3CF-21A7CFEA6AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018C5F6C-E0A0-4D93-B3CF-21A7CFEA6AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018C5F6C-E0A0-4D93-B3CF-21A7CFEA6AE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C2A7894-F10F-4EFD-915F-825639B82CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2A7894-F10F-4EFD-915F-825639B82CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2A7894-F10F-4EFD-915F-825639B82CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2A7894-F10F-4EFD-915F-825639B82CF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
