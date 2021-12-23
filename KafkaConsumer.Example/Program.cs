@@ -13,7 +13,6 @@ namespace KafkaConsumer.Example
     {
         static async Task Main(string[] args)
         {
-            //setup our DI
             var serviceProvider = new ServiceCollection()
                 .AddLogging()
                 .AddSingleton<IConfig, Kafka.Connector.Implements.Config>()
@@ -30,16 +29,10 @@ namespace KafkaConsumer.Example
 
             var cts = new CancellationToken();
 
-            //do the actual work here
             var consumer = serviceProvider.GetService<IConsumerService>();
             var callBack = serviceProvider.GetService<ICallbackService>();
 
-            //for (int i = 0; i < 1000; i++)
-            //{
             await consumer.Consume(topic, "consumidor", callBack, cts);//.GetAwaiter().GetResult();
-
-            //Console.WriteLine($"Result: {Newtonsoft.Json.JsonConvert.SerializeObject(result)}");
-            //}
 
             Console.ReadKey();
         }

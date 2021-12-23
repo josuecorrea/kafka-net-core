@@ -14,7 +14,6 @@ namespace KafkaProducer.Example
     {
         static async Task Main(string[] args)
         {
-            //setup our DI
             var serviceProvider = new ServiceCollection()
                 .AddLogging()
                 .AddSingleton<IConfig, Kafka.Connector.Implements.Config>()
@@ -27,11 +26,10 @@ namespace KafkaProducer.Example
 
             const string topic = "meutopico";
 
-            //do the actual work here
             var producer = serviceProvider.GetService<IProducerService>();
             while (true) 
             {
-                var result = await producer.MessagePublish(topic, Guid.NewGuid().ToString());//.GetAwaiter().GetResult();
+                var result = await producer.MessagePublish(topic, Guid.NewGuid().ToString());
 
                 Console.WriteLine($"Result: {Newtonsoft.Json.JsonConvert.SerializeObject(result)}");
             }
