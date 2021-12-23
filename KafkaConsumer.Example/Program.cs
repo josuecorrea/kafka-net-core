@@ -20,8 +20,9 @@ namespace KafkaConsumer.Example
                 .AddSingleton<IServerConnector, ServerConnector>()
                 .AddSingleton<IConsumerService, ConsumerService>()
                 .AddSingleton<ICallbackService, CallBack>()
-                //.AddSingleton<IProducerService, ProducerService>()
-                //.AddTransient(typeof(IGenericProducerService<>), typeof(GenericProducerService<>))
+                .AddSingleton<IProducerService, ProducerService>()
+                .AddTransient(typeof(IGenericProducerService<,>), typeof(GenericProducerService<,>))
+                .AddTransient(typeof(IGenericConsumerService<,>), typeof(GenericConsumerService<,>))
                 .BuildServiceProvider();
 
 

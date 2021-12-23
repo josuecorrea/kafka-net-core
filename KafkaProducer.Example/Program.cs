@@ -21,7 +21,8 @@ namespace KafkaProducer.Example
                 .AddSingleton<IServerConnector, ServerConnector>()
                 .AddSingleton<IConsumerService, ConsumerService>()
                 .AddSingleton<IProducerService, ProducerService>()
-                //.AddTransient(typeof(IGenericProducerService<>), typeof(GenericProducerService<>))
+                .AddTransient(typeof(IGenericProducerService<,>), typeof(GenericProducerService<,>))
+                .AddTransient(typeof(IGenericConsumerService<,>), typeof(GenericConsumerService<,>))
                 .BuildServiceProvider();
 
             const string topic = "meutopico";
