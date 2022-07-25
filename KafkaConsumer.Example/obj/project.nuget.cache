@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "N4e5bzhGlN+Lo+z1tFXM7nXuv8ZeY2c9cE6gZsiPr2NKNVX7vvd/UpvefgBVaudFzV5QMJ1VmHDJ3IdoZ+zyOw==",
+  "dgSpecHash": "hrlcFVSRu2X88ZlY3VvFzxebL4CmHxQxpVjvdk/iH8ehqj6XEzFv+GcdoMR5gHv0hIlo5TTNtVFpgQLXkBRsXA==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\kafka-net-core\\KafkaConsumer.Example\\KafkaConsumer.Example.csproj",
   "expectedPackageFiles": [

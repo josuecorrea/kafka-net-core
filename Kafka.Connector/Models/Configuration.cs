@@ -1,6 +1,6 @@
 ﻿namespace Kafka.Connector.Models
 {
-    public class Configuration
+    public class BasicConfiguration
     {
         public ConfigServerProperties Properties { get; set; }
         public bool AcksEnabled { get; set; }

@@ -7,6 +7,6 @@ C:\Projetos\kafka-net-core\Kafka.Connector\obj\Debug\net5.0\Kafka.Connector.Asse
 C:\Projetos\kafka-net-core\Kafka.Connector\obj\Debug\net5.0\Kafka.Connector.AssemblyInfo.cs
 C:\Projetos\kafka-net-core\Kafka.Connector\obj\Debug\net5.0\Kafka.Connector.csproj.CoreCompileInputs.cache
 C:\Projetos\kafka-net-core\Kafka.Connector\obj\Debug\net5.0\Kafka.Connector.dll
-C:\Projetos\kafka-net-core\Kafka.Connector\obj\Debug\net5.0\ref\Kafka.Connector.dll
-C:\Projetos\kafka-net-core\Kafka.Connector\obj\Debug\net5.0\Kafka.Connector.pdb
 C:\Projetos\kafka-net-core\Kafka.Connector\obj\Debug\net5.0\refint\Kafka.Connector.dll
+C:\Projetos\kafka-net-core\Kafka.Connector\obj\Debug\net5.0\Kafka.Connector.pdb
+C:\Projetos\kafka-net-core\Kafka.Connector\obj\Debug\net5.0\ref\Kafka.Connector.dll

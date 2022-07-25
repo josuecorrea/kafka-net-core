@@ -2,6 +2,7 @@
 using Kafka.Connector.Contracts;
 using Kafka.Connector.Implements;
 using Kafka.Service.Contracts;
+using Kafka.Service.Extennsions;
 using Kafka.Service.Implements;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -16,17 +17,13 @@ namespace KafkaProducer.Example
         {
             var serviceProvider = new ServiceCollection()
                 .AddLogging()
-                .AddSingleton<IConfig, Kafka.Connector.Implements.Config>()
-                .AddSingleton<IServerConnector, ServerConnector>()
-                .AddSingleton<IConsumerService, ConsumerService>()
-                .AddSingleton<IProducerService, ProducerService>()
-                .AddTransient(typeof(IGenericProducerService<,>), typeof(GenericProducerService<,>))
-                .AddTransient(typeof(IGenericConsumerService<,>), typeof(GenericConsumerService<,>))
+                .AddKafkaService(new ConfigOptions())                
                 .BuildServiceProvider();
 
             const string topic = "meutopico";
 
             var producer = serviceProvider.GetService<IProducerService>();
+           
             while (true) 
             {
                 var result = await producer.MessagePublish(topic, Guid.NewGuid().ToString());

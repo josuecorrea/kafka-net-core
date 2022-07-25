@@ -18,7 +18,7 @@ namespace Kafka.Service.Implements
         {
             _serverConnectorFactory = serverConnectorFactory;
 
-            _producer = new ProducerBuilder<TKey, TValue>(_serverConnectorFactory.CreateProducerInstanceConnetor().GetAwaiter().GetResult()).SetValueSerializer(new JsonSerializer<TValue>()).Build();
+            _producer = new ProducerBuilder<TKey, TValue>(_serverConnectorFactory.GetProducerInstanceConnetor().GetAwaiter().GetResult()).SetValueSerializer(new JsonSerializer<TValue>()).Build();
         }
        
         public async Task ProduceAsync(string topic, TKey key, TValue value)

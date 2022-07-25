@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "M+zjams5gpanVEbbb+RiAqk1DDLAjKH9zrolov9/97Qk4BnALeN//e3gzScNqGvZl4BaF3eVjWNt/r0+sZCDxg==",
+  "dgSpecHash": "hOViDyd07oIimkHoO7eNmWe6oOrcAQnZzNko8mm2LkWY96/4d3qAbCDkf7cps+DCL10Iu7PqwGfz1KZaxtsmqA==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\kafka-net-core\\Kafka.Service\\Kafka.Service.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Josue\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\6.0.0\\microsoft.extensions.configuration.fileextensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\microsoft.extensions.configuration.json\\6.0.0\\microsoft.extensions.configuration.json.6.0.0.nupkg.sha512",
+    "C:\\Users\\Josue\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\6.0.0\\microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\6.0.0\\microsoft.extensions.fileproviders.physical.6.0.0.nupkg.sha512",

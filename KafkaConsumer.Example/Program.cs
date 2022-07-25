@@ -15,7 +15,7 @@ namespace KafkaConsumer.Example
         {
             var serviceProvider = new ServiceCollection()
                 .AddLogging()
-                .AddSingleton<IConfig, Kafka.Connector.Implements.Config>()
+                .AddSingleton<IConfig, Kafka.Connector.Implements.ConfigOptions>()
                 .AddSingleton<IServerConnector, ServerConnector>()
                 .AddSingleton<IConsumerService, ConsumerService>()
                 .AddSingleton<ICallbackService, CallBack>()

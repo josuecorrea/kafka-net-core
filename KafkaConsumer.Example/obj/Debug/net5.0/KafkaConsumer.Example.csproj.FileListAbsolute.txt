@@ -60,7 +60,7 @@ C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\KafkaConsumer.
 C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\KafkaConsumer.Example.csproj.CoreCompileInputs.cache
 C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\KafkaConsumer.Example.csproj.CopyComplete
 C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\KafkaConsumer.Example.dll
-C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\ref\KafkaConsumer.Example.dll
+C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\refint\KafkaConsumer.Example.dll
 C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\KafkaConsumer.Example.pdb
 C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\KafkaConsumer.Example.genruntimeconfig.cache
-C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\refint\KafkaConsumer.Example.dll
+C:\Projetos\kafka-net-core\KafkaConsumer.Example\obj\Debug\net5.0\ref\KafkaConsumer.Example.dll

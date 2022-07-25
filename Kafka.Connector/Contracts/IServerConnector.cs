@@ -5,8 +5,8 @@ namespace Kafka.Connector.Contracts
 {
     public interface IServerConnector
     {
-        Task<ProducerConfig> CreateProducerInstanceConnetor();
+        Task<ProducerConfig> GetProducerInstanceConnetor();
 
-        Task<ConsumerConfig> CreateConsumerInstanceConnetor();
+        Task<ConsumerConfig> GetConsumerInstanceConnetor();
     }
 }

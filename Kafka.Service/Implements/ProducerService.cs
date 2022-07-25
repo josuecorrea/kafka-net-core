@@ -9,22 +9,36 @@ namespace Kafka.Service.Implements
     public class ProducerService : IProducerService, IDisposable
     {
         private readonly IServerConnector _serverConnectorFactory;
-        IProducer<Null, string> _producer;
+        readonly IProducer<Null, string> _producer;
 
         public ProducerService(IServerConnector serverConnectorFactory)
         {
             _serverConnectorFactory = serverConnectorFactory;
 
-            _producer = new ProducerBuilder<Null, string>(_serverConnectorFactory.CreateProducerInstanceConnetor().GetAwaiter().GetResult()).Build();
+            _producer = new ProducerBuilder<Null, string>(_serverConnectorFactory.GetProducerInstanceConnetor().GetAwaiter().GetResult()).Build();
         }
 
         public async Task<DeliveryResult<Null, string>> MessagePublish(string topic, string message)
         {
-            //using var producer = new ProducerBuilder<Null, string>(await _serverConnectorFactory.CreateProducerInstanceConnetor()).Build();
-
             try
             {
                 var sendResult = await _producer.ProduceAsync(topic, new Message<Null, string> { Value = message });
+
+                return sendResult;
+            }
+            catch (ProduceException<Null, string> e)
+            {
+                throw e;
+            }
+        }
+
+        public async Task<DeliveryResult<Null, string>> MessagePublish(string topic, int partition, string message)
+        {
+            try
+            {
+                var topicPartition = new TopicPartition(topic, partition);
+
+                var sendResult = await _producer.ProduceAsync(topicPartition, new Message<Null, string> { Value = message });
 
                 return sendResult;
             }

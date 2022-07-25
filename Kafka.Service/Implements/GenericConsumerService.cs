@@ -28,7 +28,7 @@ namespace Kafka.Service.Implements
 
         private async Task StartConsumerLoop(string topic, string groupId, CancellationToken cancellationToken)
         {
-            var consumerConfig = await _serverConnectorFactory.CreateConsumerInstanceConnetor();
+            var consumerConfig = await _serverConnectorFactory.GetConsumerInstanceConnetor();
             consumerConfig.GroupId = groupId;
 
             var consumer = new ConsumerBuilder<TKey, TValue>(consumerConfig).SetValueDeserializer(new JsonDeserializer<TValue>()).Build();

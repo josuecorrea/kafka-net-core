@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NN2+Kr6J3bE1bHOcSduqg3k/m5XZJGHJjkw8kzq7mCXgPb5XCdDV3cABYxkjG6FV7d9BxFcAvhtCQm9REwhcWA==",
+  "dgSpecHash": "MhTiMG0/e40PvjrpNxqhhKKU87cXuF4W0Pwvd/BJrQ5W+1rn+IsL4Ceaa88ll2Di9+Rw+GTLj7CtuU0NLjgIRQ==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\kafka-net-core\\KafkaProducer.Example\\KafkaProducer.Example.csproj",
   "expectedPackageFiles": [

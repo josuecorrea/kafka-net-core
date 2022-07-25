@@ -5,6 +5,6 @@ namespace Kafka.Service.Contracts
 {
     public interface IConfigService
     {
-        Task SetCustomConfig(Configuration configProperties);
+        Task SetCustomConfig(BasicConfiguration configProperties);
     }
 }

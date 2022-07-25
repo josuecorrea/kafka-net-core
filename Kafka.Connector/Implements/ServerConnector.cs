@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Kafka.Connector.Implements
 {
-    public class ServerConnector : IServerConnector
+    public class ServerConnector : ConfigOptions, IServerConnector
     {
         private readonly IConfig _config;
 
@@ -13,8 +13,8 @@ namespace Kafka.Connector.Implements
             _config = config;
         }
 
-        public async Task<ConsumerConfig> CreateConsumerInstanceConnetor() => await _config.CreateConsumerConfig();
+        public async Task<ConsumerConfig> GetConsumerInstanceConnetor() => ConsumerConfig;
 
-        public async Task<ProducerConfig> CreateProducerInstanceConnetor() => await _config.CreateProducerConfig();
+        public async Task<ProducerConfig> GetProducerInstanceConnetor() => ProducerConfig;
     }
 }

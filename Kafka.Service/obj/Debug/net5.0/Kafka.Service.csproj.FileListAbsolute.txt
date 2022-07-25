@@ -10,6 +10,6 @@ C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.Assembly
 C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.csproj.CoreCompileInputs.cache
 C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.csproj.CopyComplete
 C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.dll
-C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\ref\Kafka.Service.dll
-C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.pdb
 C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\refint\Kafka.Service.dll
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.pdb
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\ref\Kafka.Service.dll

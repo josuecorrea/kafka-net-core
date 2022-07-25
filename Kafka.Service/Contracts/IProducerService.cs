@@ -6,5 +6,6 @@ namespace Kafka.Service.Contracts
     public interface IProducerService
     {
         Task<DeliveryResult<Null, string>> MessagePublish(string topic, string message);
+        Task<DeliveryResult<Null, string>> MessagePublish(string topic, int partition, string message);
     }
 }
