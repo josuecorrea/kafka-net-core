@@ -1,11 +1,9 @@
 ﻿using Confluent.Kafka;
-using Kafka.Connector.Contracts;
 using Kafka.Connector.Implements;
+using Kafka.Connector.Models;
 using Kafka.Service.Contracts;
 using Kafka.Service.Extennsions;
-using Kafka.Service.Implements;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
@@ -17,14 +15,25 @@ namespace KafkaProducer.Example
         {
             var serviceProvider = new ServiceCollection()
                 .AddLogging()
-                .AddKafkaService(new ConfigOptions())                
+                .AddKafkaService(new ConfigOptions(new ConfigServerProperties
+                {
+                    BootstrapServers = "localhost:9092"
+                },
+                new ProducerConfig
+                {
+                    Acks = Acks.All
+                },
+                new ConsumerConfig
+                {
+                    Acks = Acks.All
+                }))
                 .BuildServiceProvider();
 
             const string topic = "meutopico";
 
             var producer = serviceProvider.GetService<IProducerService>();
-           
-            while (true) 
+
+            while (true)
             {
                 var result = await producer.MessagePublish(topic, Guid.NewGuid().ToString());
 

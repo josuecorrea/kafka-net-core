@@ -4,6 +4,6 @@ namespace Kafka.Connector.Contracts
 {
     public interface IConfig
     {
-        Task ExecuteServerConfig();
+        //Task ExecuteServerConfig();
     }
 }

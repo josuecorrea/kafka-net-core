@@ -9,10 +9,9 @@ namespace Kafka.Service.Extennsions
 {
     public static class KafkaService
     {
-
         public static IServiceCollection AddKafkaService(this IServiceCollection services, ConfigOptions config)
         {
-            ConfigExecute(config);
+            config.ExecuteServerConfigCheck();
 
             services.AddSingleton<IConfig, ConfigOptions>();
             services.AddSingleton<IServerConnector, ServerConnector>();
@@ -22,19 +21,6 @@ namespace Kafka.Service.Extennsions
             services.AddTransient(typeof(IGenericConsumerService<,>), typeof(GenericConsumerService<,>));
 
             return services;
-        }
-
-        
-        public static void ConfigExecute(ConfigOptions config)
-        {
-            try
-            {
-                var t = "LLL";
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        }      
     }
 }
