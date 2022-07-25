@@ -17,7 +17,6 @@ namespace KafkaConsumer.Example
                 .AddLogging()
                 .AddSingleton<IConfig, Kafka.Connector.Implements.Config>()
                 .AddSingleton<IServerConnector, ServerConnector>()
-                .AddSingleton<IServerConnector, ServerConnector>()
                 .AddSingleton<IConsumerService, ConsumerService>()
                 .AddSingleton<ICallbackService, CallBack>()
                 .AddSingleton<IProducerService, ProducerService>()

@@ -1,6 +1,5 @@
 C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Service.deps.json
 C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Service.dll
-C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\ref\Kafka.Service.dll
 C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Service.pdb
 C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Connector.dll
 C:\Projetos\kafka-net-core\Kafka.Service\bin\Debug\net5.0\Kafka.Connector.pdb
@@ -13,3 +12,4 @@ C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.csproj.C
 C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.dll
 C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\ref\Kafka.Service.dll
 C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\Kafka.Service.pdb
+C:\Projetos\kafka-net-core\Kafka.Service\obj\Debug\net5.0\refint\Kafka.Service.dll

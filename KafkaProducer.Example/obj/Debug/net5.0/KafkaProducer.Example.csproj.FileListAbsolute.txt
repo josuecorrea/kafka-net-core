@@ -3,7 +3,6 @@ C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\KafkaProducer.
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\KafkaProducer.Example.runtimeconfig.json
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\KafkaProducer.Example.runtimeconfig.dev.json
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\KafkaProducer.Example.dll
-C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\ref\KafkaProducer.Example.dll
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\KafkaProducer.Example.pdb
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\Confluent.Kafka.dll
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\Microsoft.Extensions.Configuration.dll
@@ -64,3 +63,4 @@ C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.
 C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\ref\KafkaProducer.Example.dll
 C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.pdb
 C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.genruntimeconfig.cache
+C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\refint\KafkaProducer.Example.dll

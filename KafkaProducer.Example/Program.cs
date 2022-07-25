@@ -18,7 +18,6 @@ namespace KafkaProducer.Example
                 .AddLogging()
                 .AddSingleton<IConfig, Kafka.Connector.Implements.Config>()
                 .AddSingleton<IServerConnector, ServerConnector>()
-                .AddSingleton<IServerConnector, ServerConnector>()
                 .AddSingleton<IConsumerService, ConsumerService>()
                 .AddSingleton<IProducerService, ProducerService>()
                 .AddTransient(typeof(IGenericProducerService<,>), typeof(GenericProducerService<,>))

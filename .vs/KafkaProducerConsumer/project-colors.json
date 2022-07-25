@@ -15,7 +15,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "018c5f6c-e0a0-4d93-b3cf-21a7cfea6ae5": {
+      "ProjectGuid": "018c5f6c-e0a0-4d93-b3cf-21a7cfea6ae5",
+      "DisplayName": "KafkaProducer.Example",
+      "ColorIndex": 2
+    },
+    "2c2a7894-f10f-4efd-915f-825639b82cf8": {
+      "ProjectGuid": "2c2a7894-f10f-4efd-915f-825639b82cf8",
+      "DisplayName": "KafkaConsumer.Example",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

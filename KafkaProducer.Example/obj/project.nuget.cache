@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kgNps6WHZiCLAtYUs48jhRHmQw46AARyY8NUeGNSkMWS5GWqIS/fEjmzXdaaw9AEXPnVFm+vFMsqDjgo4fTqYQ==",
+  "dgSpecHash": "NN2+Kr6J3bE1bHOcSduqg3k/m5XZJGHJjkw8kzq7mCXgPb5XCdDV3cABYxkjG6FV7d9BxFcAvhtCQm9REwhcWA==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\kafka-net-core\\KafkaProducer.Example\\KafkaProducer.Example.csproj",
   "expectedPackageFiles": [
@@ -29,8 +29,7 @@
     "C:\\Users\\Josue\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Josue\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\Josue\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\Josue\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+    "C:\\Users\\Josue\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
