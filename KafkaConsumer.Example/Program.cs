@@ -1,7 +1,8 @@
-﻿using Kafka.Connector.Contracts;
+﻿using Confluent.Kafka;
 using Kafka.Connector.Implements;
+using Kafka.Connector.Models;
 using Kafka.Service.Contracts;
-using Kafka.Service.Implements;
+using Kafka.Service.Extennsions;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading;
@@ -15,15 +16,21 @@ namespace KafkaConsumer.Example
         {
             var serviceProvider = new ServiceCollection()
                 .AddLogging()
-                .AddSingleton<IConfig, Kafka.Connector.Implements.ConfigOptions>()
-                .AddSingleton<IServerConnector, ServerConnector>()
-                .AddSingleton<IConsumerService, ConsumerService>()
-                .AddSingleton<ICallbackService, CallBack>()
-                .AddSingleton<IProducerService, ProducerService>()
-                .AddTransient(typeof(IGenericProducerService<,>), typeof(GenericProducerService<,>))
-                .AddTransient(typeof(IGenericConsumerService<,>), typeof(GenericConsumerService<,>))
+                .AddKafkaService(new ConfigOptions(true,
+                     new ConfigServerProperties
+                     {
+                         BootstrapServers = "localhost:9092"                         
+                     },
+                    new ProducerConfig
+                    {
+                        //Acks = Acks.All
+                    },
+                    new ConsumerConfig
+                    {
+                        //Acks = Acks.All
+                    }))
+                .AddTransient<ICallbackService, CallBack>()
                 .BuildServiceProvider();
-
 
             const string topic = "meutopico";
 

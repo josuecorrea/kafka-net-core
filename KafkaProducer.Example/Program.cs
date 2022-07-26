@@ -15,17 +15,18 @@ namespace KafkaProducer.Example
         {
             var serviceProvider = new ServiceCollection()
                 .AddLogging()
-                .AddKafkaService(new ConfigOptions(new ConfigServerProperties
+                .AddKafkaService(new ConfigOptions(true,
+                new ConfigServerProperties
                 {
                     BootstrapServers = "localhost:9092"
                 },
                 new ProducerConfig
                 {
-                    Acks = Acks.All
+                    //Acks = Acks.All
                 },
                 new ConsumerConfig
                 {
-                    Acks = Acks.All
+                    //Acks = Acks.All
                 }))
                 .BuildServiceProvider();
 

@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace Kafka.Connector.Implements
 {
-    public class ConfigOptions : IConfig
+    public class ConfigOptions : IConfigOptions
     {
-        public ConfigOptions(ConfigServerProperties configServerProperties,
+        public ConfigOptions(bool autoCommit,
+                             ConfigServerProperties configServerProperties,
                              ProducerConfig producerConfig,
                              ConsumerConfig consumerConfig)
         {
             ConfigServerProperties = configServerProperties;
             ProducerConfig = producerConfig;
             ConsumerConfig = consumerConfig;
+            AutoCommit = autoCommit;
         }
 
-        protected ConfigOptions() { }
+        public ConfigOptions() { }
 
+        public static bool AutoCommit { get; private set; }
         public static ConfigServerProperties ConfigServerProperties { get; private set; }
         public static ProducerConfig ProducerConfig { get; private set; }
         public static ConsumerConfig ConsumerConfig { get; private set; }
@@ -63,6 +66,21 @@ namespace Kafka.Connector.Implements
                 //config.Acks = Acks.Leader; //TODO: COLOCAR COMO  FEATURE FLAG               
 
             });          
+        }
+
+        public async Task<bool> IsAutoCommit()
+        {
+            return AutoCommit;
+        }
+
+        public async Task<ProducerConfig> GetProducerConfig()
+        {
+            return ProducerConfig;
+        }
+
+        public async Task<ConsumerConfig> GetConsumerConfig()
+        {
+            return ConsumerConfig;
         }
     }
 }

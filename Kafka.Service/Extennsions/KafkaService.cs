@@ -13,7 +13,7 @@ namespace Kafka.Service.Extennsions
         {
             config.ExecuteServerConfigCheck();
 
-            services.AddSingleton<IConfig, ConfigOptions>();
+            services.AddSingleton<IConfigOptions, ConfigOptions>();
             services.AddSingleton<IServerConnector, ServerConnector>();
             services.AddSingleton<IConsumerService, ConsumerService>();
             services.AddSingleton<IProducerService, ProducerService>();

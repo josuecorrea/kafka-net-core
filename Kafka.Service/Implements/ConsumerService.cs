@@ -11,21 +11,57 @@ namespace Kafka.Service.Implements
 {
     public class ConsumerService : IConsumerService
     {
-        private readonly IServerConnector _serverConnectorFactory;        
+        private readonly IServerConnector _serverConnectorFactory;
+        private readonly IConfigOptions _config;
 
-        public ConsumerService(IServerConnector serverConnectorFactory)
+        public ConsumerService(IServerConnector serverConnectorFactory, IConfigOptions config)
         {
             _serverConnectorFactory = serverConnectorFactory;
+            _config = config;
         }
 
         public async Task Consume(string topic, string groupId, ICallbackService callback, CancellationToken cancellationToken)
         {
             var instanceConnetor = await _serverConnectorFactory.GetConsumerInstanceConnetor();
             instanceConnetor.GroupId = groupId;
-
+            
             using var consumer = new ConsumerBuilder<Ignore, string>(instanceConnetor).Build();
 
             consumer.Subscribe(topic);
+            
+            var cts = new CancellationTokenSource();
+
+            try
+            {
+                while (!cancellationToken.IsCancellationRequested)
+                {
+                    var message = consumer.Consume(5000);
+
+                    if (message != null)
+                    {                        
+                        await callback.Message(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
+
+                        if (await _config.IsAutoCommit())
+                        {
+                            consumer.Commit(message);
+                        }
+                    }
+                }
+            }
+            catch (OperationCanceledException ex)
+            {
+                consumer.Close();
+            }
+        }
+
+        public async Task Consume(TopicPartition topicPartition, string groupId, ICallbackService callback, CancellationToken cancellationToken)
+        {
+            var instanceConnetor = await _serverConnectorFactory.GetConsumerInstanceConnetor();
+            instanceConnetor.GroupId = groupId;
+
+            using var consumer = new ConsumerBuilder<Ignore, string>(instanceConnetor).Build();
+
+            consumer.Assign(topicPartition);
 
             var cts = new CancellationTokenSource();
 
@@ -39,7 +75,7 @@ namespace Kafka.Service.Implements
                     {
                         await callback.Message(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
 
-                        if (true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
+                        if (await _config.IsAutoCommit())
                         {
                             consumer.Commit(message);
                         }
@@ -51,6 +87,7 @@ namespace Kafka.Service.Implements
                 consumer.Close();
             }
         }
+
 
         public async Task Consume(string topic, string groupId, ICallbackService callback, long quantity, CancellationToken cancellationToken)
         {
@@ -75,7 +112,7 @@ namespace Kafka.Service.Implements
                     {
                          messages.Add(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
 
-                        if (true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
+                        if (await _config.IsAutoCommit())
                         {
                             consumer.Commit(message);
                         }
@@ -89,6 +126,45 @@ namespace Kafka.Service.Implements
                 consumer.Close();
             }
         }
+
+        public async Task Consume(TopicPartition topicPartition, string groupId, ICallbackService callback, long quantity, CancellationToken cancellationToken)
+        {
+            var instanceConnetor = await _serverConnectorFactory.GetConsumerInstanceConnetor();
+            instanceConnetor.GroupId = groupId;
+
+            using var consumer = new ConsumerBuilder<Ignore, string>(instanceConnetor).Build();
+
+            consumer.Assign(topicPartition);
+
+            var cts = new CancellationTokenSource();
+
+            var messages = new List<Message>();
+
+            try
+            {
+                for (int i = 0; i <= quantity; i++)
+                {
+                    var message = consumer.Consume(cts.Token);
+
+                    if (message != null)
+                    {
+                        messages.Add(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
+
+                        if (await _config.IsAutoCommit())
+                        {
+                            consumer.Commit(message);
+                        }
+                    }
+                }
+
+                await callback.Message(messages);
+            }
+            catch (OperationCanceledException)
+            {
+                consumer.Close();
+            }
+        }
+
 
         public async Task AssignNewPartitionOffSet(string topic, string groupId, int partition, long offset, ICallbackService callback, CancellationToken cancellationToken)
         {
@@ -113,7 +189,7 @@ namespace Kafka.Service.Implements
                     {
                         await callback.Message(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
 
-                        if (true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
+                        if (await _config.IsAutoCommit())
                         {
                             consumer.Commit(message);                           
                         }
@@ -156,12 +232,11 @@ namespace Kafka.Service.Implements
                     {
                         await callback.Message(new Connector.Models.Message(Guid.NewGuid(), message.Message.Value, message.Offset.Value, message.Partition.Value, message.Topic));
 
-                        if (!true) //if (!_commitOnConsume)//TODO: OPÇÃO DEVE VIR DO CONFIG
+                        if (await _config.IsAutoCommit())
                         {
                             consumer.Commit(message);
                         }
                     }
-
                 }
             }
             catch (OperationCanceledException)
@@ -190,7 +265,6 @@ namespace Kafka.Service.Implements
             return result;           
         }
 
-
         public async Task<Offset> GetCurrentOffSetPositionFromTopic(string topic, int partition)
         {
             var instanceConnetor = await _serverConnectorFactory.GetConsumerInstanceConnetor();
@@ -205,7 +279,6 @@ namespace Kafka.Service.Implements
 
             return result;
         }
-
 
         public async Task StoreOffsets(string topic, long offset, int partition)
         {

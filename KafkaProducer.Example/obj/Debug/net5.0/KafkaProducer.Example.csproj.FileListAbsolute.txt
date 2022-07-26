@@ -1,8 +1,3 @@
-C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.csproj.AssemblyReference.cache
-C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.AssemblyInfoInputs.cache
-C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.AssemblyInfo.cs
-C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.csproj.CoreCompileInputs.cache
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\KafkaProducer.Example.exe
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\KafkaProducer.Example.deps.json
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\KafkaProducer.Example.runtimeconfig.json
@@ -58,6 +53,11 @@ C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\Kafka.Connecto
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\Kafka.Service.dll
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\Kafka.Connector.pdb
 C:\Projetos\kafka-net-core\KafkaProducer.Example\bin\Debug\net5.0\Kafka.Service.pdb
+C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.csproj.AssemblyReference.cache
+C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.AssemblyInfoInputs.cache
+C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.AssemblyInfo.cs
+C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.csproj.CoreCompileInputs.cache
 C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.csproj.CopyComplete
 C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\KafkaProducer.Example.dll
 C:\Projetos\kafka-net-core\KafkaProducer.Example\obj\Debug\net5.0\refint\KafkaProducer.Example.dll
