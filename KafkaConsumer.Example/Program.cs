@@ -17,10 +17,10 @@ namespace KafkaConsumer.Example
             var serviceProvider = new ServiceCollection()
                 .AddLogging()
                 .AddKafkaService(new ConfigOptions(true,
-                     new ConfigServerProperties
-                     {
-                         BootstrapServers = "localhost:9092"                         
-                     },
+                    new ConfigServerProperties
+                    {
+                        BootstrapServers = "localhost:9092"                         
+                    },
                     new ProducerConfig
                     {
                         //Acks = Acks.All
@@ -32,14 +32,14 @@ namespace KafkaConsumer.Example
                 .AddTransient<ICallbackService, CallBack>()
                 .BuildServiceProvider();
 
-            const string topic = "meutopico";
+            const string topic = "prod-product-logs";
 
             var cts = new CancellationToken();
 
             var consumer = serviceProvider.GetService<IConsumerService>();
             var callBack = serviceProvider.GetService<ICallbackService>();
 
-            await consumer.Consume(topic, "consumidor", callBack, cts);//.GetAwaiter().GetResult();
+            await consumer.Consume(topic, "products", callBack, cts);//.GetAwaiter().GetResult();
 
             Console.ReadKey();
         }

@@ -30,7 +30,7 @@ namespace KafkaProducer.Example
                 }))
                 .BuildServiceProvider();
 
-            const string topic = "meutopico";
+            const string topic = "prod-product-logs";
 
             var producer = serviceProvider.GetService<IProducerService>();
 

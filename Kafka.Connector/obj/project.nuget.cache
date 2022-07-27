@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "msB+0gA3UiHJdUJ8rwKkp8b/eXvK0YvCCEjBeJpthEUuQGS26HUg02XY7PXziJL5NJ8s+aq7vtPR1ywG92yxSQ==",
+  "dgSpecHash": "erWy4+jV2+U/3p1zEvSUkshcNcoea6rNq9ZYSg1DsK/vZ75MyUGIW4NiNoCkw1/eTy+GN6VFz0fTHGhhiAagDw==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\kafka-net-core\\Kafka.Connector\\Kafka.Connector.csproj",
   "expectedPackageFiles": [
